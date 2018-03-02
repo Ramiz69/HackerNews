@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zse-9k-EAb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="JXv-bw-ary">
+            <objects>
+                <viewController id="zse-9k-EAb" customClass="TodayViewController" customModule="TodayExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ODm-lk-RyF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cUt-1u-39y">
+                                <rect key="frame" x="8" y="2" width="359" height="29"/>
+                                <segments>
+                                    <segment title="New Stories"/>
+                                    <segment title="Top Stories"/>
+                                    <segment title="Best Stories"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.2901960784" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="didTapSegmentControl:" destination="zse-9k-EAb" eventType="valueChanged" id="9fV-e7-FLQ"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ovp-id-etS">
+                                <rect key="frame" x="0.0" y="30" width="375" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zse-9k-EAb" id="gyW-gA-PQP"/>
+                                    <outlet property="delegate" destination="zse-9k-EAb" id="zpY-GL-kVp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ovp-id-etS" firstAttribute="leading" secondItem="lQI-qU-q5E" secondAttribute="leading" id="5HY-Vd-iot"/>
+                            <constraint firstAttribute="bottom" secondItem="Ovp-id-etS" secondAttribute="bottom" id="ATS-Wf-Cl2"/>
+                            <constraint firstItem="cUt-1u-39y" firstAttribute="top" secondItem="lQI-qU-q5E" secondAttribute="top" constant="2" id="G8e-G9-Vel"/>
+                            <constraint firstItem="lQI-qU-q5E" firstAttribute="trailing" secondItem="Ovp-id-etS" secondAttribute="trailing" id="SfD-7m-cUe"/>
+                            <constraint firstItem="lQI-qU-q5E" firstAttribute="trailing" secondItem="cUt-1u-39y" secondAttribute="trailing" constant="8" id="WWG-At-gcN"/>
+                            <constraint firstItem="Ovp-id-etS" firstAttribute="top" secondItem="cUt-1u-39y" secondAttribute="bottom" id="jmr-cj-c7y"/>
+                            <constraint firstItem="cUt-1u-39y" firstAttribute="leading" secondItem="lQI-qU-q5E" secondAttribute="leading" constant="8" id="vkg-fP-kDs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lQI-qU-q5E"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="100"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ovp-id-etS" id="ekn-e6-vhK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWu-lJ-lId" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-240.80000000000001" y="274.36281859070465"/>
+        </scene>
+    </scenes>
+</document>
