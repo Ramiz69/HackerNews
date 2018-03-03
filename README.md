@@ -42,5 +42,13 @@
 <td><img src="https://a.radikal.ru/a42/1803/7d/3fe5b56522db.png" alt=""></td>
 <td><img src="https://a.radikal.ru/a28/1803/4c/824e21075d9b.png" alt=""></td>
 </tr>
+<tr>
+<td><img src="https://d.radikal.ru/d29/1803/b3/e0013c3ce15d.png" alt=""></td>
+<td><img src="https://d.radikal.ru/d16/1803/74/c8794b00f0e4.png" alt=""></td>
+</tr>
+<tr>
+<td><img src="https://c.radikal.ru/c37/1803/62/a8b30f7f810c.png" alt=""></td>
+<td><img src="https://b.radikal.ru/b30/1803/02/c31a36250da3.png" alt=""></td>
+</tr>
 </tbody>
 </table>
