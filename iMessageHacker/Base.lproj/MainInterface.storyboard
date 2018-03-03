@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="iMessageHacker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E9j-DK-r4s">
+                                <rect key="frame" x="8" y="24" width="304" height="29"/>
+                                <segments>
+                                    <segment title="New Stories"/>
+                                    <segment title="Top Stories"/>
+                                    <segment title="Best Stories"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didTapSegmentControl:" destination="ObA-dk-sSI" eventType="valueChanged" id="1Oc-4A-5yc"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="shE-st-O59">
+                                <rect key="frame" x="0.0" y="60" width="320" height="468"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ObA-dk-sSI" id="0hh-6w-qGc"/>
+                                    <outlet property="delegate" destination="ObA-dk-sSI" id="hFa-gn-429"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="shE-st-O59" firstAttribute="top" secondItem="E9j-DK-r4s" secondAttribute="bottom" constant="8" id="E8a-95-eqc"/>
+                            <constraint firstItem="shE-st-O59" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" id="Eog-QV-t5v"/>
+                            <constraint firstAttribute="bottom" secondItem="shE-st-O59" secondAttribute="bottom" id="FBZ-Gt-unS"/>
+                            <constraint firstItem="E9j-DK-r4s" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="8" id="H4m-qd-Smr"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="E9j-DK-r4s" secondAttribute="trailing" constant="8" id="bVK-iQ-iTF"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="shE-st-O59" secondAttribute="trailing" id="hAa-z5-1PB"/>
+                            <constraint firstItem="E9j-DK-r4s" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="4" id="wme-Dy-nhm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="tableView" destination="shE-st-O59" id="vGg-oK-kYu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
