@@ -15,6 +15,7 @@
 <li>State Restoration</li>
 <li>Today Extension</li>
 <li>CoreSpotlight</li>
+<li>iMessage Extension</li>
 </ul>
 <h2 id="getting-started">Getting Started</h2>
 <ol>
@@ -36,8 +37,6 @@
 <td><img src="https://c.radikal.ru/c11/1803/fc/c2cd949ee6e7.png" alt=""></td>
 </tr>
 <tr>
-<td>–</td>
-<td></td>
 </tr>
 <tr>
 <td><img src="https://a.radikal.ru/a42/1803/7d/3fe5b56522db.png" alt=""></td>
