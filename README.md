@@ -48,7 +48,6 @@
 </tr>
 <tr>
 <td><img src="https://c.radikal.ru/c37/1803/62/a8b30f7f810c.png" alt=""></td>
-<td><img src="https://b.radikal.ru/b20/1803/99/d7ceb1bbb1b1.png" alt=""></td>
 </tr>
 </tbody>
 </table>
