@@ -17,39 +17,33 @@ final class OperationGetStory: Operation {
     public init(_ storyID: Int) {
         self.storyID = storyID
         super.init()
-        if isCancelled {
-            return
-        } else {
-            main()
-        }
+        cancelOperation()
+        main()
     }
     
     override func main() {
-        if isCancelled {
-            return
-        } else {
-            StoriesManager.getStory(storyID, completionHandler: { (response, error) in
-                guard let json = response as? JSON, error == nil else {
-                    return
-                }
-                self.story = Story(json)
-                if !UserDefaults.isIndexed {
-                    if let story = self.story {
-                       SpotlightManager.setDataForDisplay(with: story.title,
-                                                          contentDescription: story.author,
-                                                          creationDate: Date.correctDate(Date(timeIntervalSince1970: story.date)),
-                                                          url: URL(string: story.url),
-                                                          keyID: "\(self.storyID)",
+        cancelOperation()
+        StoriesManager.getStory(storyID, completionHandler: { (response, error) in
+            guard let json = response as? JSON, error == nil else {
+                return
+            }
+            self.story = Story(json)
+            if !UserDefaults.isIndexed {
+                if let story = self.story {
+                    SpotlightManager.setDataForDisplay(with: story.title,
+                                                       contentDescription: story.author,
+                                                       creationDate: Date.correctDate(Date(timeIntervalSince1970: story.date)),
+                                                       url: URL(string: story.url),
+                                                       keyID: "\(self.storyID)",
                         completionHandler: { (error) in
                             
-                       })
-                    }
+                    })
                 }
-                guard let completionBlock = self.completionBlock else {
-                    return
-                }
-                completionBlock()
-            })
-        }
+            }
+            guard let completionBlock = self.completionBlock else {
+                return
+            }
+            completionBlock()
+        })
     }
 }

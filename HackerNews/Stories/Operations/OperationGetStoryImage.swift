@@ -17,22 +17,16 @@ final class OperationGetStoryImage: Operation {
     public init(_ url: URL) {
         self.url = url
         super.init()
-        if isCancelled {
-            return
-        } else {
-            main()
-        }
+        cancelOperation()
+        main()
     }
     
     override func main() {
-        if isCancelled {
-            return
+        cancelOperation()
+        if let cachedImage = OperationGetStoryImage.imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
+            self.image = cachedImage
         } else {
-            if let cachedImage = OperationGetStoryImage.imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
-                self.image = cachedImage
-            } else {
-                downloadImage(with: url.appleTouchIconURL)
-            }
+            downloadImage(with: url.appleTouchIconURL)
         }
     }
     
@@ -44,9 +38,7 @@ final class OperationGetStoryImage: Operation {
             guard let completionBlock = self.completionBlock, let data = data else {
                 return
             }
-            if self.isCancelled {
-                return
-            }
+            self.cancelOperation()
             if let imageFromURL = UIImage(data: data) {
                 OperationGetStoryImage.imageCache.setObject(imageFromURL, forKey: url.absoluteString as NSString)
                 self.image = imageFromURL
@@ -58,7 +50,7 @@ final class OperationGetStoryImage: Operation {
                 completionBlock()
                 return
             }
-        }.resume()
+            }.resume()
     }
     
 }

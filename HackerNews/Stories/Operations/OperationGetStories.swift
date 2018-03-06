@@ -17,32 +17,23 @@ final class OperationGetStories: Operation {
     public init(_ contentType: ContentType) {
         self.contentType = contentType
         super.init()
-        if isCancelled {
-            return
-        } else {
-            main()
-        }
+        cancelOperation()
+        main()
     }
     
     override func main() {
-        if isCancelled {
-            return
-        } else {
-            StoriesManager.getStories(contentType, completionHandler: { (response, error) in
-                guard let items = response as? [Int], error == nil else {
-                    self.storiesID = nil
-                    return
-                }
-                self.storiesID = items
-                if self.isCancelled {
-                    return
-                }
-                guard let completionBlock = self.completionBlock else {
-                    return
-                }
-                completionBlock()
-            })
-        }
+        cancelOperation()
+        StoriesManager.getStories(contentType, completionHandler: { (response, error) in
+            guard let items = response as? [Int], error == nil else {
+                self.storiesID = nil
+                return
+            }
+            self.storiesID = items
+            self.cancelOperation()
+            guard let completionBlock = self.completionBlock else {
+                return
+            }
+            completionBlock()
+        })
     }
-    
 }

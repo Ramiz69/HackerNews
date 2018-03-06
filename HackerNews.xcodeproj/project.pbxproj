@@ -74,6 +74,9 @@
 		4B79179C2048988A00DDB535 /* Panda3DTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B79179B2048988A00DDB535 /* Panda3DTouch.png */; };
 		4B79179E204898D900DDB535 /* Apple3DTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B79179D204898D900DDB535 /* Apple3DTouch.png */; };
 		4B7917A22048995600DDB535 /* News3DTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B7917A12048995600DDB535 /* News3DTouch.png */; };
+		4BE11646204D4F7A00D48A62 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE11645204D4F7A00D48A62 /* Operation.swift */; };
+		4BE11647204D51C200D48A62 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE11645204D4F7A00D48A62 /* Operation.swift */; };
+		4BE11648204D51C300D48A62 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE11645204D4F7A00D48A62 /* Operation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		4B44AAAA204E9DF900BA36DF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B5C82EB2048CC7A00C26FEA /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +190,7 @@
 		4B79179B2048988A00DDB535 /* Panda3DTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Panda3DTouch.png; sourceTree = "<group>"; };
 		4B79179D204898D900DDB535 /* Apple3DTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple3DTouch.png; sourceTree = "<group>"; };
 		4B7917A12048995600DDB535 /* News3DTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = News3DTouch.png; sourceTree = "<group>"; };
+		4BE11645204D4F7A00D48A62 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +298,7 @@
 		28C3B79A2017C4B900C55010 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4BE11644204D4F6200D48A62 /* Operation */,
 				4B5C8314204947A300C26FEA /* Date */,
 				4B5C83112049459400C26FEA /* String */,
 				4B5C830D2048D8E200C26FEA /* UserDefaults */,
@@ -474,6 +489,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		4BE11644204D4F6200D48A62 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				4BE11645204D4F7A00D48A62 /* Operation.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,6 +509,7 @@
 				28214B092017B8BC00A079C1 /* Resources */,
 				4B5C82EB2048CC7A00C26FEA /* Embed App Extensions */,
 				4B5C83932049E51700C26FEA /* Embed Frameworks */,
+				4B44AAAA204E9DF900BA36DF /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -650,6 +674,7 @@
 				288E6CB120189AFB003016EA /* Story.swift in Sources */,
 				4B5C830F2048D8F300C26FEA /* UserDefaults.swift in Sources */,
 				288E6CB62018CF1B003016EA /* StoriesViewController.swift in Sources */,
+				4BE11646204D4F7A00D48A62 /* Operation.swift in Sources */,
 				4B7917882048928000DDB535 /* IconType.swift in Sources */,
 				288E6CBC2018D092003016EA /* StoryTableViewCell.swift in Sources */,
 				4B64A1C72047E4080015B2AD /* OperationGetStory.swift in Sources */,
@@ -679,6 +704,7 @@
 				4B5C83BD2049F61400C26FEA /* TodayViewController.swift in Sources */,
 				4B5C83AB2049EA9E00C26FEA /* StoryTableViewCell.swift in Sources */,
 				4B5C83B92049EDAF00C26FEA /* UserDefaults.swift in Sources */,
+				4BE11647204D51C200D48A62 /* Operation.swift in Sources */,
 				4B5C83B82049ED9D00C26FEA /* OperationGetStory.swift in Sources */,
 				4B5C83AE2049EADF00C26FEA /* UIResponder+Thread .swift in Sources */,
 			);
@@ -698,6 +724,7 @@
 				4B5C83E4204B172C00C26FEA /* String+DateFormatter.swift in Sources */,
 				4B5C83E7204B173700C26FEA /* OperationGetStories.swift in Sources */,
 				4B5C83E2204B172100C26FEA /* Story.swift in Sources */,
+				4BE11648204D51C300D48A62 /* Operation.swift in Sources */,
 				4B5C83E9204B174500C26FEA /* UIResponder+Thread .swift in Sources */,
 				4B5C83F8204B1D8B00C26FEA /* StoryTableViewCell.swift in Sources */,
 			);
