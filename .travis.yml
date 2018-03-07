@@ -1,11 +1,4 @@
 language: objective-c
-osx_image: xcode9.1
-xcode_workspace: Hackers.xcworkspace
-xcode_scheme: Hackers
-before_install:
-- gem install xcpretty
-- gem update cocoapods
-install:
-- pod install --project-directory=$TRAVIS_BUILD_DIR --repo-update
-script:
-- set -o pipefail && xcodebuild -workspace ${TRAVIS_XCODE_WORKSPACE} -scheme ${TRAVIS_XCODE_SCHEME} -sdk iphonesimulator -configuration Release | xcpretty
+osx_image: xcode9.2
+xcode_workspace: HackerNews.xcworkspace
+xcode_scheme: HackerNews
