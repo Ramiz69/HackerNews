@@ -10,19 +10,9 @@ import UIKit
 
 extension URL {
     
-    var favIconURL: URL? {
-        guard let scheme = self.scheme, let host = self.host else {
-            return nil
-        }
+    func getFaviconImageFromURL(_ isFavicon: Bool = false) -> URL? {
+        guard let scheme = self.scheme, let host = self.host else { return nil }
         
-        return URL(string: scheme + "://" + host + "/favicon.ico")
-    }
-    
-    var appleTouchIconURL: URL? {
-        guard let scheme = self.scheme, let host = self.host else {
-            return nil
-        }
-        
-        return URL(string: scheme + "://" + host + "/apple-touch-icon.png")
+        return URL(string: scheme + "://" + host + (isFavicon ? "/favicon.ico" : "/apple-touch-icon.png"))
     }
 }

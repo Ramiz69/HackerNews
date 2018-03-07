@@ -26,7 +26,7 @@ final class OperationGetStoryImage: Operation {
         if let cachedImage = OperationGetStoryImage.imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
             self.image = cachedImage
         } else {
-            downloadImage(with: url.appleTouchIconURL)
+            downloadImage(with: url.getFaviconImageFromURL())
         }
     }
     
@@ -44,13 +44,13 @@ final class OperationGetStoryImage: Operation {
                 self.image = imageFromURL
                 completionBlock()
             } else if let string = String(data: data, encoding: .utf8), string.contains("unavailable") {
-                self.downloadImage(with: self.url.favIconURL)
+                self.downloadImage(with: self.url.getFaviconImageFromURL(true))
             } else {
                 self.image = nil
                 completionBlock()
                 return
             }
-            }.resume()
+        }.resume()
     }
     
 }
