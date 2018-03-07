@@ -26,13 +26,13 @@ final class OperationGetStoryImage: Operation {
         if let cachedImage = OperationGetStoryImage.imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
             self.image = cachedImage
         } else {
-            downloadImage(with: url.getFaviconImageFromURL())
+            downloadImageFrom(url.getFaviconImageFromURL())
         }
     }
     
     //MARK: - Private methods
     
-    private func downloadImage(with url: URL?) {
+    private func downloadImageFrom(_ url: URL?) {
         guard let url = url else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let completionBlock = self.completionBlock, let data = data else {
@@ -44,7 +44,7 @@ final class OperationGetStoryImage: Operation {
                 self.image = imageFromURL
                 completionBlock()
             } else if let string = String(data: data, encoding: .utf8), string.contains("unavailable") {
-                self.downloadImage(with: self.url.getFaviconImageFromURL(true))
+                self.downloadImageFrom(self.url.getFaviconImageFromURL(true))
             } else {
                 self.image = nil
                 completionBlock()

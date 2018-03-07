@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="Xas-LE-ozI">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QbQ-6h-6gN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QbQ-6h-6gN" customClass="MainNavigationController" customModule="HackerNews" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4ud-1q-4rD">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -32,7 +32,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="URl-aB-Mwt" kind="relationship" relationship="rootViewController" id="obQ-TP-Q62"/>
+                        <segue destination="o6n-b8-FFF" kind="relationship" relationship="rootViewController" id="cun-ih-PlF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0T-Ep-b85" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,22 +40,31 @@
             <point key="canvasLocation" x="-916" y="134"/>
         </scene>
         <!--Stories View Controller-->
-        <scene sceneID="btE-Jv-Z0T">
+        <scene sceneID="Ytm-sD-8AK">
             <objects>
-                <tableViewController storyboardIdentifier="StoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="URl-aB-Mwt" customClass="StoriesViewController" customModule="HackerNews" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3hs-5J-dQX">
+                <viewController id="o6n-b8-FFF" customClass="StoriesViewController" customModule="HackerNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bep-dD-P0b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qja-lL-58p">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="URl-aB-Mwt" id="frr-oR-J2n"/>
-                            <outlet property="delegate" destination="URl-aB-Mwt" id="PRR-n3-r0s"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="i6M-zG-2oJ">
+                        <constraints>
+                            <constraint firstItem="qja-lL-58p" firstAttribute="top" secondItem="Isb-Ze-s7I" secondAttribute="top" id="CDd-7i-XqJ"/>
+                            <constraint firstItem="qja-lL-58p" firstAttribute="leading" secondItem="Isb-Ze-s7I" secondAttribute="leading" id="HH9-70-KwU"/>
+                            <constraint firstItem="Isb-Ze-s7I" firstAttribute="trailing" secondItem="qja-lL-58p" secondAttribute="trailing" id="d8m-4r-jFP"/>
+                            <constraint firstAttribute="bottom" secondItem="qja-lL-58p" secondAttribute="bottom" id="oTD-A4-EoI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Isb-Ze-s7I"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iRv-4w-tgs">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jaB-Vw-GsD">
-                            <rect key="frame" x="51" y="7" width="266" height="30"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="M5t-DG-XsN">
+                            <rect key="frame" x="8" y="7.5" width="309" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="New Stories"/>
@@ -63,30 +72,24 @@
                                 <segment title="Best Stories"/>
                             </segments>
                             <connections>
-                                <action selector="didTapSegmentControl:" destination="URl-aB-Mwt" eventType="valueChanged" id="2yF-n0-xsG"/>
+                                <action selector="didTapSegmentControl:" destination="o6n-b8-FFF" eventType="valueChanged" id="zJO-fC-lJL"/>
                             </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="settings" landscapeImage="settings" id="YgA-1M-evk">
                             <connections>
-                                <segue destination="aYN-iD-Yzi" kind="show" id="2i9-Wo-vc9"/>
+                                <segue destination="aYN-iD-Yzi" kind="show" id="Pbb-G4-4Pg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="C2P-1O-Lxs">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <connections>
-                            <action selector="didChangeRefreshControl:" destination="URl-aB-Mwt" eventType="valueChanged" id="CvR-Kk-0gg"/>
-                        </connections>
-                    </refreshControl>
                     <connections>
-                        <outlet property="segmentControl" destination="jaB-Vw-GsD" id="T6p-wM-StK"/>
-                        <segue destination="WWn-fa-swL" kind="show" identifier="StoryViewController" id="4Mm-P7-Tbi"/>
+                        <outlet property="segmentControl" destination="M5t-DG-XsN" id="v3A-NV-dR9"/>
+                        <outlet property="tableView" destination="qja-lL-58p" id="sL8-1N-NEO"/>
+                        <segue destination="WWn-fa-swL" kind="show" identifier="StoryViewController" id="UHx-Yd-87Y"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fNJ-u8-phT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pG-qo-SnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="134"/>
+            <point key="canvasLocation" x="-199.5" y="133.5"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="zWN-As-6fO">

@@ -26,16 +26,12 @@
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.2901960784" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="didTapSegmentControl:" destination="zse-9k-EAb" eventType="valueChanged" id="9fV-e7-FLQ"/>
+                                    <action selector="didTapSegmentControl:" destination="zse-9k-EAb" eventType="valueChanged" id="ZmN-oj-lzi"/>
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ovp-id-etS">
                                 <rect key="frame" x="0.0" y="30" width="375" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="zse-9k-EAb" id="gyW-gA-PQP"/>
-                                    <outlet property="delegate" destination="zse-9k-EAb" id="zpY-GL-kVp"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,7 +51,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="100"/>
                     <connections>
-                        <outlet property="tableView" destination="Ovp-id-etS" id="ekn-e6-vhK"/>
+                        <outlet property="segmentControl" destination="cUt-1u-39y" id="EAy-IU-Lbt"/>
+                        <outlet property="tableView" destination="Ovp-id-etS" id="12x-i4-ibE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWu-lJ-lId" userLabel="First Responder" sceneMemberID="firstResponder"/>

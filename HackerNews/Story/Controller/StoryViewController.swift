@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-final class StoryViewController: UIViewController, WKNavigationDelegate, UIViewControllerRestoration {
+final class StoryViewController: UIViewController {
 
     @IBOutlet weak private var webView: WKWebView!
 
@@ -33,8 +33,10 @@ final class StoryViewController: UIViewController, WKNavigationDelegate, UIViewC
             view.showActivityIndicator()
         }
     }
-    
-    //MARK: - WKNavigationDelegate
+}
+
+//MARK: - WKNavigationDelegate
+extension StoryViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         view.removeActivityIndicator()
@@ -43,33 +45,4 @@ final class StoryViewController: UIViewController, WKNavigationDelegate, UIViewC
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         view.removeActivityIndicator()
     }
-    
-    //MARK: - UIViewControllerRestoration
-    
-    static func viewController(withRestorationIdentifierPath identifierComponents: [Any], coder: NSCoder) -> UIViewController? {
-        let viewController = StoryViewController()
-        return viewController
-    }
-    
-    override func encodeRestorableState(with coder: NSCoder) {
-        super.encodeRestorableState(with: coder)
-        guard let model = model else { return }
-        do {
-            let modelData = try JSONEncoder().encode(model)
-            coder.encode(modelData)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    override func decodeRestorableState(with coder: NSCoder) {
-        super.decodeRestorableState(with: coder)
-        guard let data = coder.decodeData() else { return }
-        do {
-            model = try JSONDecoder().decode(Story.self, from: data)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
 }

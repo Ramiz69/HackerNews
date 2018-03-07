@@ -36,7 +36,7 @@ final class StoryTableViewCell: UITableViewCell {
         
         titleLabel.text = model.title
         authorLabel.text = model.author
-        dateLabel.text = String.correctFormatDate(Date(timeIntervalSince1970: model.date))
+        dateLabel.text = String.stringFromDate(Date(timeIntervalSince1970: model.date))
         operation = OperationGetStoryImage(URL(string: model.url)!)
         operation?.completionBlock = {
             self.executeOnMainThread {

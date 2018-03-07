@@ -32,7 +32,7 @@ final class OperationGetStory: Operation {
                 if let story = self.story {
                     SpotlightManager.setDataForDisplay(with: story.title,
                                                        contentDescription: story.author,
-                                                       creationDate: Date.correctDate(Date(timeIntervalSince1970: story.date)),
+                                                       creationDate: Date.dateFromDate(Date(timeIntervalSince1970: story.date)),
                                                        url: URL(string: story.url),
                                                        keyID: "\(self.storyID)",
                         completionHandler: { (error) in

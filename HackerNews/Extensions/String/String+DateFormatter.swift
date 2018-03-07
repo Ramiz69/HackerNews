@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    static func correctFormatDate(_ date: Date) -> String {
+    static func stringFromDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar.autoupdatingCurrent
         dateFormatter.timeZone = TimeZone.autoupdatingCurrent

@@ -11,7 +11,7 @@ import Messages
 import HackerNewsKit
 import SafariServices
 
-class MessagesViewController: MSMessagesAppViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate {
+class MessagesViewController: MSMessagesAppViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak private var tableView: UITableView!
     private var operationsInProgress = [IndexPath: OperationGetStory]()
@@ -95,7 +95,7 @@ class MessagesViewController: MSMessagesAppViewController, UITableViewDataSource
         let layout = MSMessageTemplateLayout()
         layout.caption = story.title
         layout.subcaption = story.author
-        layout.trailingSubcaption = String.correctFormatDate(Date(timeIntervalSince1970: story.date))
+        layout.trailingSubcaption = String.stringFromDate(Date(timeIntervalSince1970: story.date))
         
         let message = MSMessage(session: conversation.selectedMessage?.session ?? MSSession())
         message.url = url
@@ -163,11 +163,13 @@ class MessagesViewController: MSMessagesAppViewController, UITableViewDataSource
         }
         composeMessage(story)
     }
-    
-    //MARK: - SFSafariViewControllerDelegate
+}
+
+//MARK: - SFSafariViewControllerDelegate
+
+extension MessagesViewController: SFSafariViewControllerDelegate {
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-
 }
