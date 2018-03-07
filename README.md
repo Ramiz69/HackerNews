@@ -1,6 +1,5 @@
 ---
-
-
+<a href="https://codeclimate.com/github/Ramiz69/HackerNews/maintainability"><img src="https://api.codeclimate.com/v1/badges/9883009aec080c2db179/maintainability" /></a>
 ---
 
 <h1 id="hackernews">HackerNews</h1>
