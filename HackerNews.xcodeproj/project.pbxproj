@@ -55,10 +55,6 @@
 		4B5C83E8204B174000C26FEA /* URL+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E6CCF2018F2B5003016EA /* URL+Icon.swift */; };
 		4B5C83E9204B174500C26FEA /* UIResponder+Thread .swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E6CC32018D33B003016EA /* UIResponder+Thread .swift */; };
 		4B5C83EA204B174B00C26FEA /* UIView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C3B7A12017C4B900C55010 /* UIView+ActivityIndicator.swift */; };
-		4B5C83F0204B1A0200C26FEA /* HackerNewsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5C83C52049FCF100C26FEA /* HackerNewsKit.framework */; };
-		4B5C83F1204B1A0200C26FEA /* HackerNewsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5C83C52049FCF100C26FEA /* HackerNewsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4B5C83F4204B1A1600C26FEA /* HackerNewsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5C83C52049FCF100C26FEA /* HackerNewsKit.framework */; };
-		4B5C83F5204B1A1B00C26FEA /* HackerNewsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5C83C52049FCF100C26FEA /* HackerNewsKit.framework */; };
 		4B5C83F6204B1A4900C26FEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C3B7D12017C4B900C55010 /* Images.xcassets */; };
 		4B5C83F8204B1D8B00C26FEA /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288E6CBB2018D092003016EA /* StoryTableViewCell.swift */; };
 		4B5C83FE204B1EB800C26FEA /* StoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B5C83FD204B1EB800C26FEA /* StoryTableViewCell.xib */; };
@@ -96,13 +92,6 @@
 			remoteGlobalIDString = 4B5C83972049E9BA00C26FEA;
 			remoteInfo = TodayExtension;
 		};
-		4B5C83C42049FCF100C26FEA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4B5C83892049E48B00C26FEA /* HackerNewsKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4B5C836A2049CDAA00C26FEA;
-			remoteInfo = HackerNewsKit;
-		};
 		4B5C83DA204B11B000C26FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 28214B032017B8BC00A079C1 /* Project object */;
@@ -110,11 +99,11 @@
 			remoteGlobalIDString = 4B5C83CD204B11B000C26FEA;
 			remoteInfo = iMessageHacker;
 		};
-		4B5C83F2204B1A0200C26FEA /* PBXContainerItemProxy */ = {
+		4BCDBF2D205C323500946CC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4B5C83892049E48B00C26FEA /* HackerNewsKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4B5C83692049CDAA00C26FEA;
+			containerPortal = 4BCDBF29205C323500946CC3 /* HackerNewsKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4B5C836A2049CDAA00C26FEA;
 			remoteInfo = HackerNewsKit;
 		};
 /* End PBXContainerItemProxy section */
@@ -148,7 +137,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4B5C83F1204B1A0200C26FEA /* HackerNewsKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,7 +162,6 @@
 		4B5C8312204945AF00C26FEA /* String+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateFormatter.swift"; sourceTree = "<group>"; };
 		4B5C8315204947B000C26FEA /* Date+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFormatter.swift"; sourceTree = "<group>"; };
 		4B5C831720494AE600C26FEA /* OperationGetStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationGetStories.swift; sourceTree = "<group>"; };
-		4B5C83892049E48B00C26FEA /* HackerNewsKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HackerNewsKit.xcodeproj; path = HackerNewsKit/HackerNewsKit.xcodeproj; sourceTree = "<group>"; };
 		4B5C83982049E9BA00C26FEA /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B5C839A2049E9BA00C26FEA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		4B5C83A02049E9BA00C26FEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -204,6 +191,7 @@
 		4BBEE95C204FE88700C37152 /* StoriesViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoriesViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		4BBEE95E204FE8E000C37152 /* StoriesViewController+UIViewControllerPreviewingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoriesViewController+UIViewControllerPreviewingDelegate.swift"; sourceTree = "<group>"; };
 		4BBEE960204FFA2E00C37152 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		4BCDBF29205C323500946CC3 /* HackerNewsKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HackerNewsKit.xcodeproj; path = HackerNews/HackerNewsKit/HackerNewsKit.xcodeproj; sourceTree = "<group>"; };
 		4BE11645204D4F7A00D48A62 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,7 +200,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B5C83F0204B1A0200C26FEA /* HackerNewsKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +207,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B5C83F4204B1A1600C26FEA /* HackerNewsKit.framework in Frameworks */,
 				4B5C839B2049E9BA00C26FEA /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +215,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B5C83F5204B1A1B00C26FEA /* HackerNewsKit.framework in Frameworks */,
 				4B5C83D0204B11B000C26FEA /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +225,7 @@
 		28214B022017B8BC00A079C1 = {
 			isa = PBXGroup;
 			children = (
-				4B5C83892049E48B00C26FEA /* HackerNewsKit.xcodeproj */,
+				4BCDBF29205C323500946CC3 /* HackerNewsKit.xcodeproj */,
 				28214B0D2017B8BC00A079C1 /* HackerNews */,
 				4B5C839C2049E9BA00C26FEA /* TodayExtension */,
 				4B5C83D1204B11B000C26FEA /* iMessageHacker */,
@@ -435,14 +420,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4B5C83C12049FCF100C26FEA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4B5C83C52049FCF100C26FEA /* HackerNewsKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		4B5C83D1204B11B000C26FEA /* iMessageHacker */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +509,14 @@
 			path = StoriesViewController;
 			sourceTree = "<group>";
 		};
+		4BCDBF2A205C323500946CC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BCDBF2E205C323500946CC3 /* HackerNewsKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4BE11644204D4F6200D48A62 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,7 +544,6 @@
 			dependencies = (
 				4B5C83A42049E9BA00C26FEA /* PBXTargetDependency */,
 				4B5C83DB204B11B000C26FEA /* PBXTargetDependency */,
-				4B5C83F3204B1A0200C26FEA /* PBXTargetDependency */,
 			);
 			name = HackerNews;
 			productName = HackerNews;
@@ -642,8 +626,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4B5C83C12049FCF100C26FEA /* Products */;
-					ProjectRef = 4B5C83892049E48B00C26FEA /* HackerNewsKit.xcodeproj */;
+					ProductGroup = 4BCDBF2A205C323500946CC3 /* Products */;
+					ProjectRef = 4BCDBF29205C323500946CC3 /* HackerNewsKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -656,11 +640,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4B5C83C52049FCF100C26FEA /* HackerNewsKit.framework */ = {
+		4BCDBF2E205C323500946CC3 /* HackerNewsKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = HackerNewsKit.framework;
-			remoteRef = 4B5C83C42049FCF100C26FEA /* PBXContainerItemProxy */;
+			remoteRef = 4BCDBF2D205C323500946CC3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -794,11 +778,6 @@
 			isa = PBXTargetDependency;
 			target = 4B5C83CD204B11B000C26FEA /* iMessageHacker */;
 			targetProxy = 4B5C83DA204B11B000C26FEA /* PBXContainerItemProxy */;
-		};
-		4B5C83F3204B1A0200C26FEA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = HackerNewsKit;
-			targetProxy = 4B5C83F2204B1A0200C26FEA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

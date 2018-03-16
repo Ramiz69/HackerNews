@@ -80,7 +80,7 @@ class StoriesViewController: UIViewController {
     }
     
     private func changeAppIcon() {
-        if let rawIconName = IconType(rawValue: self.segmentControl.selectedSegmentIndex) {
+        if let rawIconName = IconType(rawValue: segmentControl.selectedSegmentIndex) {
             delegate?.changeAppIcon(rawIconName)
         }
     }
