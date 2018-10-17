@@ -31,7 +31,7 @@ final class StoryTableViewCell: UITableViewCell {
         showActivityIndicator()
     }
     
-    open func configureCell(with model: Story) {
+    public func configureCell(with model: Story) {
         removeActivityIndicator()
         
         titleLabel.text = model.title

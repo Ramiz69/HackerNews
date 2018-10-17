@@ -16,7 +16,7 @@ extension UIView {
             
             self.isUserInteractionEnabled = false
             let activityIndicatorView = UIActivityIndicatorView(frame: self.bounds)
-            activityIndicatorView.activityIndicatorViewStyle = .gray
+            activityIndicatorView.style = .gray
             activityIndicatorView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             self.addSubview(activityIndicatorView)
             activityIndicatorView.startAnimating()

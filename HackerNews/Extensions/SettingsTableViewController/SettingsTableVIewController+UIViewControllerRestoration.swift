@@ -9,7 +9,7 @@
 import UIKit
 
 extension SettingsTableViewController: UIViewControllerRestoration {
-    static func viewController(withRestorationIdentifierPath identifierComponents: [Any], coder: NSCoder) -> UIViewController? {
+    static func viewController(withRestorationIdentifierPath identifierComponents: [String], coder: NSCoder) -> UIViewController? {
         let viewController = SettingsTableViewController()
         return viewController
     }

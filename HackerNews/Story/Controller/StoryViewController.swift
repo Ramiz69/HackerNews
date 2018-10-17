@@ -13,7 +13,7 @@ final class StoryViewController: UIViewController {
 
     @IBOutlet weak private var webView: WKWebView!
 
-    open var model: Story?
+    public var model: Story?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
